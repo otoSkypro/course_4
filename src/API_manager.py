@@ -16,7 +16,7 @@ class APImanager(ABC):
     @abstractmethod
     def format_data(self):
 
-
+        pass
 
 class HeadHunterApi(APImanager):
 

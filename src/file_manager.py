@@ -1,29 +1,29 @@
 import json
-from abc import ABC, abstractmethod
+# from abc import ABC, abstractmethod
 
 
-class FileManager(ABC):
+class FileManager():
     """Класс для работы с файлами"""
 
-    @abstractmethod
-    def get_vacancies_by_keyword(self, keyword):
-        """Функция чтения из файла"""
-        pass
-
-    @abstractmethod
-    def write_file(self, vacancies):
-        """Функция записи в файл"""
-        pass
-
-    @abstractmethod
-    def delete_vacancy(self, vacancies):
-        """Функция удаления из файла"""
-        pass
-
-    @abstractmethod
-    def get_list_vacancies(self):
-        """Функция получения списка вакансии"""
-        pass
+    # @abstractmethod
+    # def get_vacancies_by_keyword(self, keyword):
+    #     """Функция чтения из файла"""
+    #     pass
+    #
+    # @abstractmethod
+    # def write_file(self, vacancies):
+    #     """Функция записи в файл"""
+    #     pass
+    #
+    # @abstractmethod
+    # def delete_vacancy(self, vacancies):
+    #     """Функция удаления из файла"""
+    #     pass
+    #
+    # @abstractmethod
+    # def get_list_vacancies(self):
+    #     """Функция получения списка вакансии"""
+    #     pass
 
 
 class JsonFileManager(FileManager):

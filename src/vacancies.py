@@ -1,7 +1,14 @@
 class Vacancy:
+    """Класс для работы с вакансиями"""
 
     def __init__(self, title: str, salary_from: int, description: str, url: str):
-
+        """
+        Инициализатор класса Vacancy.
+        :param title: название вакансии
+        :param salary_from: минимальная зарплата
+        :param description: описание вакансии
+        :param url: ссылка на вакансию
+        """
         self.title = title
         self.salary_from = salary_from
         self.description = description
@@ -18,7 +25,7 @@ class Vacancy:
         return self.salary_from <= other.salary_from
 
     def validate_data(self):
-
+        """Функция для валидации данных"""
         if self.title is None:
             self.title = ' '
         elif self.url is None:

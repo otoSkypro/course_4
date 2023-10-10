@@ -3,7 +3,9 @@ from src.file_manager import JsonFileManager
 
 
 def choose_platform():
-
+    """
+    Функция для общения с пользователем и выбора площадки.
+    """
     print('Выберите платформу для поиска вакансии\n'
           '1 - HeadHunter\n'
           '2 - SuperJob\n'
@@ -11,14 +13,16 @@ def choose_platform():
 
 
 def choose_vacancy():
-
+    """
+    Функция для общения с пользователем и ввода названия вакансии для формирования запроса.
+    """
     print(' Ведите вакансию для поиска ')
     user_input = input()
     return user_input
 
 
 def get_vacancies(api_manager: list):
-
+    """Функция для вывода списка вакансий по запросу с API"""
     vacancies = []
     for api in api_manager:
         vacancies.extend(api.format_data())
@@ -26,7 +30,9 @@ def get_vacancies(api_manager: list):
 
 
 def get_top_vacancies(file_manager, user_input_n):
-
+    """
+    Функция для получения вакансий, отсортированных по зарплате.
+    """
     vacancy_list = file_manager.get_list_vacancies()
     sorted_vacancies = sorted(vacancy_list, key=lambda elem: elem['salary_from'], reverse=True)[:user_input_n]
     return sorted_vacancies
@@ -66,6 +72,7 @@ def actions_for_vacancies(file_manager):
 
 
 def user_interaction():
+    """Функция для взаимодействия с пользователем"""
     keyword = choose_vacancy()
     choose_platform()
     while True:

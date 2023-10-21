@@ -1,32 +1,8 @@
 import json
-# from abc import ABC, abstractmethod
 
 
-class FileManager():
-    """Класс для работы с файлами"""
 
-    # @abstractmethod
-    # def get_vacancies_by_keyword(self, keyword):
-    #     """Функция чтения из файла"""
-    #     pass
-    #
-    # @abstractmethod
-    # def write_file(self, vacancies):
-    #     """Функция записи в файл"""
-    #     pass
-    #
-    # @abstractmethod
-    # def delete_vacancy(self, vacancies):
-    #     """Функция удаления из файла"""
-    #     pass
-    #
-    # @abstractmethod
-    # def get_list_vacancies(self):
-    #     """Функция получения списка вакансии"""
-    #     pass
-
-
-class JsonFileManager(FileManager):
+class JsonFileManager:
     """Класс для работы с файлами формата json"""
 
     def __init__(self, filename):
@@ -96,7 +72,7 @@ class JsonFileManager(FileManager):
         with open(self.filename, 'r', encoding='utf-8') as f:
             file_data = f.read()
             data = json.loads(file_data)
-        # vacancies_to_delete = self.data_to_json(vacancies)
+
         for vacancy in data:
             if vacancy in vacancies:
                 data.remove(vacancy)

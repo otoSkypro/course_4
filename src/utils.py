@@ -1,4 +1,4 @@
-from src.API_manager import HeadHunterApi, SuperJobApi
+from src.api_manager import HeadHunterApi, SuperJobApi
 from src.file_manager import JsonFileManager
 
 
@@ -53,13 +53,13 @@ def actions_for_vacancies(file_manager):
                 top_n = get_top_vacancies(file_manager, user_input_n)
                 for vac in top_n:
                     print(vac)
-                break
+
             elif user_input == '2':
                 salary_input = int(input('Введите минимальную интересующую зарплату '))
                 min_salary = file_manager.get_vacancies_by_keyword({'salary_input': salary_input})
                 for vac in min_salary:
                     print(vac)
-                break
+
             elif user_input == '3':
                 low_salary_input = int(input('Введите уровень зарплаты, вакансии с которой хотите удалить: '))
                 file_manager.delete_vacancy(file_manager.get_vacancies_by_keyword({'salary_input': low_salary_input}))

@@ -24,13 +24,3 @@ class Vacancy:
     def __le__(self, other):
         return self.salary_from <= other.salary_from
 
-    def validate_data(self):
-        """Функция для валидации данных"""
-        if self.title is None:
-            self.title = ' '
-        elif self.url is None:
-            self.url = ' '
-        elif self.salary_from is None or self.salary_from == 'null':
-            self.salary_from = 0
-        elif self.description is None:
-            self.description = ' '

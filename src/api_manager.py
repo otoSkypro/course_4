@@ -8,6 +8,19 @@ from src.vacancies import Vacancy
 class APImanager(ABC):
     """Класс для работы с API сторонних сервисов"""
 
+    @staticmethod
+    def validate_data(self):
+        """Функция для валидации данных"""
+        if self.title is None:
+            self.title = ' '
+        elif self.url is None:
+            self.url = ' '
+        elif self.salary_from is None or self.salary_from == 'null':
+            self.salary_from = 0
+        elif self.description is None:
+            self.description = ' '
+        return self
+
     @abstractmethod
     def get_vacancies(self):
         """Получает ваканасии со стороннего ресурса"""
@@ -55,9 +68,9 @@ class HeadHunterApi(APImanager):
                                       'description': vacancy['snippet'].get('requirement'),
                                       'url': vacancy.get('alternate_url')}
 
-        # создание экземпляра класса с созданием полей из словаря (распаковка словаря)
+            # создание экземпляра класса с созданием полей из словаря (распаковка словаря)
             vac = Vacancy(**filtered_vacancies)
-            vac.validate_data()
+            vac = self.validate_data(vac)
             formated_vacancies.append(vac)
         # список из объектов класса Vacancy
         return formated_vacancies
@@ -101,9 +114,9 @@ class SuperJobApi(APImanager):
                                       'description': vacancy['candidat'],
                                       'url': vacancy['link']}
 
-        # создание экземпляра класса с созданием полей из словаря (распаковка словаря)
+            # создание экземпляра класса с созданием полей из словаря (распаковка словаря)
             vac = Vacancy(**filtered_vacancies)
-            vac.validate_data()
+            vac = self.validate_data(vac)
             sj_formatted_vacancies.append(vac)
         # список из объектов класса Vacancy
         return sj_formatted_vacancies

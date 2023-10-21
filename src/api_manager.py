@@ -118,5 +118,5 @@ class SuperJobApi(APImanager):
             vac = Vacancy(**filtered_vacancies)
             vac = self.validate_data(vac)
             sj_formatted_vacancies.append(vac)
-        # список из объектов класса Vacancy
+
         return sj_formatted_vacancies

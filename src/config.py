@@ -1,6 +1,6 @@
 import os
 
-# адрес для запроса на вакансии.
+# адрес для запроса на вакансии..
 HH_API_URL = 'https://api.hh.ru/vacancies'
 # адрес для запроса по областям
 HH_API_URL_AREAS = 'https://api.hh.ru/areas'

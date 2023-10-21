@@ -7,7 +7,7 @@ class Vacancy:
         :param title: название вакансии
         :param salary_from: минимальная зарплата
         :param description: описание вакансии
-        :param url: ссылка на вакансию
+        :param url: ссылка на вакансию.
         """
         self.title = title
         self.salary_from = salary_from

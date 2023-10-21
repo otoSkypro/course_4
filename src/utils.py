@@ -55,7 +55,7 @@ def actions_for_vacancies(file_manager):
                     print(vac)
 
             elif user_input == '2':
-                salary_input = int(input('Введите минимальную интересующую зарплату '))
+                salary_input = int(input('Введите минимальную интересующую зарплату'))
                 min_salary = file_manager.get_vacancies_by_keyword({'salary_input': salary_input})
                 for vac in min_salary:
                     print(vac)

@@ -11,6 +11,7 @@ class APImanager(ABC):
     @staticmethod
     def validate_data(self):
         """Функция для валидации данных"""
+
         if self.title is None:
             self.title = ' '
         elif self.url is None:

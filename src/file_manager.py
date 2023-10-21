@@ -3,6 +3,7 @@ import json
 
 
 class JsonFileManager:
+
     """Класс для работы с файлами формата json"""
 
     def __init__(self, filename):
